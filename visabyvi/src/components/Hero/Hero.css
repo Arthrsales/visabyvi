@@ -1,68 +1,246 @@
-.hero { padding: var(--space-7) 0 var(--space-6); }
+/* ========================================
+   HERO — MOBILE FIRST
+======================================== */
 
-.banner{
-   height: 100vh;
+.hero {
+  padding: 0;
+}
 
-  margin-top: -100px;
-  background-image: linear-gradient(
+
+/* ========================================
+   BANNER
+======================================== */
+
+.banner {
+  min-height: 100svh;
+
+  padding: var(--space-6) 0;
+
+  background-image:
+    linear-gradient(
       rgba(0, 0, 0, 0.726),
       rgba(0, 0, 0, 0.829)
-       ),
- url("/hero-bandeira.webp");
+    ),
+    url("/hero-bandeira.webp");
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Efeito Parallax */
-  background-attachment: fixed;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+
+/* ========================================
+   CONTAINER / ROW
+======================================== */
+
 .hero__row {
+  width: 100%;
+
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-6);
+  grid-template-columns: 1fr;
+
+  gap: var(--space-5);
+
   align-items: center;
 }
 
-.hero__title { margin: var(--space-4) 0; color: var(--color-ink); }
-.hero__subtitle { max-width: 480px; margin-bottom: var(--space-5); }
 
-.hero__actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-bottom: var(--space-5); }
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.hero__content {
+  max-width: 650px;
+}
+
+.hero__title {
+  margin: var(--space-3) 0 var(--space-4);
+
+  color: var(--color-ink);
+}
+
+.hero__subtitle {
+  max-width: 520px;
+
+  margin-bottom: var(--space-5);
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.hero__actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: var(--space-3);
+
+  margin-bottom: var(--space-5);
+}
+
+.hero__actions .btn {
+  width: 100%;
+  text-align: center;
+}
+
+
+/* ========================================
+   VISTOS
+======================================== */
 
 .hero__visas {
-  font-size: 0.78rem;
-  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+
+  line-height: 1.7;
+
+  letter-spacing: 0.12em;
+
   color: var(--color-sand-deep);
 }
 
-.hero__visual { position: relative; aspect-ratio: 1 / 1; }
 
-.hero__path { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* ========================================
+   VISUAL
+======================================== */
+
+.hero__visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 280px;
+
+  aspect-ratio: 1 / 1;
+
+  margin: 0 auto;
+}
+
+
+/* ========================================
+   CAMINHO SVG
+======================================== */
+
+.hero__path {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
 .hero__path-line {
   fill: none;
+
   stroke: var(--color-sand-deep);
+
   stroke-width: 1.5;
-  stroke-dasharray: 6 8;
+
   stroke-linecap: round;
+
+  stroke-dasharray: 6 8;
+
   stroke-dasharray: 480;
   stroke-dashoffset: 480;
-  animation: draw-path 2s var(--ease) forwards 0.2s;
-}
-@keyframes draw-path { to { stroke-dashoffset: 0; } }
 
-.hero__path-dot { fill: var(--color-sand); }
+  animation:
+    draw-path 2.5s var(--ease) forwards 0.2s;
+}
+
+@keyframes draw-path {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hero__path-dot {
+  fill: var(--color-sand);
+}
+
+
+/* ========================================
+   STAMP / LOGO
+======================================== */
 
 .hero__stamp {
   position: absolute;
-  right: 6%;
-  top: 6%;
+
+  right: 3%;
+  top: 3%;
 }
 
-@media (max-width: 900px) {
-  .hero__row { grid-template-columns: 1fr; }
-  .hero__visual { max-width: 320px; margin: 0 auto; }
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 600px) {
+
+  .banner {
+    padding: var(--space-7) 0;
+  }
+
+  .hero__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero__actions .btn {
+    width: auto;
+  }
+
+  .hero__visual {
+    max-width: 320px;
+  }
+}
+
+
+/* ========================================
+   DESKTOP
+======================================== */
+
+@media (min-width: 900px) {
+
+  .banner {
+    min-height: 100vh;
+
+    background-attachment: fixed;
+  }
+
+  .hero__row {
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: var(--space-6);
+  }
+
+  .hero__visual {
+    max-width: none;
+  }
+
+  .hero__actions {
+    flex-direction: row;
+  }
+
+}
+
+
+/* ========================================
+   DESKTOP GRANDE
+======================================== */
+
+@media (min-width: 1200px) {
+
+  .hero__row {
+    gap: var(--space-7);
+  }
+
+  .hero__visual {
+    max-width: 500px;
+  }
+
 }
