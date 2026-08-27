@@ -1,0 +1,15 @@
+@import './styles/variables.css';
+@import './styles/reset.css';
+@import './styles/typography.css';
+@import './styles/utilities.css';
+
+@import './components/Header/Header.css';
+@import './components/Hero/Hero.css';
+@import './components/LogoAnimation/LogoAnimation.css';
+@import './components/Services/Services.css';
+@import './components/Process/Process.css';
+@import './components/WhyUs/WhyUs.css';
+@import './components/Testimonials/Testimonials.css';
+@import './components/FAQ/FAQ.css';
+@import './components/CTA/CTA.css';
+@import './components/Footer/Footer.css';

@@ -1,0 +1,59 @@
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.section {
+  padding: var(--space-7) 0;
+}
+
+.section__head {
+  max-width: 640px;
+  margin-bottom: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* divisória estilo perfuração de passagem/boarding pass */
+.dashed-divider {
+  border: none;
+  border-top: 1px dashed var(--color-border);
+  margin: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0.9rem 1.6rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.btn--primary {
+  background: var(--color-sand);
+  color: var(--color-bg);
+}
+.btn--primary:hover { transform: translateY(-2px); background: var(--color-ink); }
+
+.btn--ghost {
+  border: 1px solid var(--color-border);
+  color: var(--color-ink);
+}
+.btn--ghost:hover { border-color: var(--color-sand); transform: translateY(-2px); }
+
+/* reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

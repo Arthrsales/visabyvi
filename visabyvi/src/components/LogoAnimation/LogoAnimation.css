@@ -1,0 +1,69 @@
+.logo-animation {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 100px 0;
+}
+
+.logo-animation svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* =========================
+   VISA BY VI
+========================= */
+
+.visa-text {
+  fill: #e3c194;
+  color: url(--color-sand);
+
+  font-family: "Zen Dots", sans-serif;
+  font-size: 105px;
+  font-weight: 600;
+  letter-spacing: 2px;
+
+  opacity: 0;
+
+  animation: visaAppear 2s ease forwards;
+}
+
+@keyframes visaAppear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* =========================
+   VITORIA MACEDO
+========================= */
+
+.vitoria-text {
+  fill: transparent;
+
+  stroke: white;
+  stroke-width: 1.5;
+
+  font-family: "Ephesis", cursive;
+  font-size: 80px;
+
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+
+  animation: escrever 5s ease forwards;
+  animation-delay: 1s;
+}
+
+
+@keyframes escrever {
+  to {
+    stroke-dashoffset: 0;
+    fill: white;
+  }
+}

@@ -1,0 +1,14 @@
+.footer { border-top: 1px dashed var(--color-border); padding: var(--space-5) 0; }
+
+.footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.footer__logo { color: var(--color-sand); letter-spacing: 0.1em; font-size: 0.85rem; }
+.footer__nav { display: flex; gap: var(--space-4); font-size: 0.85rem; }
+.footer__nav a:hover { color: var(--color-sand); }
+.footer__copy { font-size: 0.75rem; color: var(--color-muted); }

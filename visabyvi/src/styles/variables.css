@@ -1,0 +1,35 @@
+:root {
+  --color-bg: #181816;
+  --color-bg-elevated: #17150F;
+  --color-bg-elevated-2: #1F1C15;
+
+  --color-sand: #D6C1A6;
+  --color-sand-deep: #A9895F;
+  --color-sand-soft: rgba(214, 193, 166, 0.12);
+
+  --color-ink: #F4EFE6;
+  --color-muted: #8C8578;
+  --color-signal: #7C9885;
+  --color-border: rgba(214, 193, 166, 0.16);
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-full: 999px;
+
+  --container: 1180px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 140px;
+
+  --ease: cubic-bezier(.16, 1, .3, 1);
+}
