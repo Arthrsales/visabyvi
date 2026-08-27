@@ -1,5 +1,5 @@
 :root {
-  --color-bg: #181816;
+  --color-bg: #0E0D0B;
   --color-bg-elevated: #17150F;
   --color-bg-elevated-2: #1F1C15;
 
@@ -15,6 +15,8 @@
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
+  --font-logo: 'Playfair Display', serif;      /* fonte da logo (wordmark) */
+  --font-signature: 'Dancing Script', cursive;  /* fonte da assinatura */
 
   --radius-sm: 6px;
   --radius-md: 14px;
@@ -31,5 +33,19 @@
   --space-7: 96px;
   --space-8: 140px;
 
+  /* Durações e easing centralizados — mude aqui pra afetar o site todo */
+  --dur-fast: 0.2s;
+  --dur-base: 0.5s;
+  --dur-slow: 0.9s;
   --ease: cubic-bezier(.16, 1, .3, 1);
 }
+
+/*
+  BREAKPOINTS DE REFERÊNCIA (mobile-first, usar sempre min-width):
+  --bp-sm: 480px   -> celulares grandes
+  --bp-md: 768px   -> tablets
+  --bp-lg: 1024px  -> desktop
+  --bp-xl: 1280px  -> telas grandes
+  CSS não permite var() dentro de @media, então use os valores fixos
+  diretamente: @media (min-width: 768px) { ... }
+*/

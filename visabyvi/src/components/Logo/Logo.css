@@ -1,0 +1,68 @@
+.logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0.85;
+  user-select: none;
+}
+
+.logo__brand {
+  font-family: var(--font-logo);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--color-ink);
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+
+  opacity: 0;
+  transform: translateY(10px);
+  animation: brand-in 0.9s var(--ease) forwards 0.1s;
+}
+
+@keyframes brand-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Wrapper só existe pra conter o clip-path sem cortar o overflow do resto da logo */
+.logo__signature-wrap {
+  display: inline-block;
+  margin-top: 0.30em;
+  margin-left: 2em;
+  transform: rotate(-5deg);
+}
+
+.logo__signature {
+  --signature-dur: 4s;
+  --signature-delay: 0.5s;
+
+  display: inline-block;
+  font-family: var(--font-signature);
+  font-weight: 600;
+  color: var(--color-sand);
+  font-size: 1.05rem;
+
+  /* Efeito "sendo escrita": revela da esquerda pra direita, como tinta se espalhando */
+  clip-path: inset(0 100% 0 0);
+  animation: write-on var(--signature-dur) var(--ease) forwards var(--signature-delay);
+}
+
+@keyframes write-on {
+  to { clip-path: inset(0 0% 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo__signature { animation: none; clip-path: none; }
+}
+
+/* Header: versão pequena */
+.logo--compact .logo__brand { font-size: 1.1rem; }
+.logo--compact .logo__signature { font-size: 0.68rem; }
+.logo--compact .logo__signature-wrap { margin-left: 1rem;}
+
+/* Hero/Footer: versão grande */
+.logo--full .logo__brand { font-size: clamp(6.2rem, 6vw, 3.4rem); }
+.logo--full .logo__signature { font-size: clamp(2rem, 3vw, 3.6rem); }
+
+@media (min-width: 768px) {
+  .logo--full .logo__signature-wrap { margin-left: 1rem; }
+}

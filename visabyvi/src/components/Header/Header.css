@@ -3,7 +3,7 @@
   top: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(14, 13, 11, 0.75);
+  background: rgba(14, 13, 11, 0.85);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -11,26 +11,59 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-4);
+  gap: var(--space-3);
   padding-top: var(--space-3);
   padding-bottom: var(--space-3);
 }
 
-.header__logo {
-  font-size: 0.95rem;
-  letter-spacing: 0.12em;
-  color: var(--color-sand);
-}
+/* Mobile: nav desktop escondida, CTA escondido (fica só no menu mobile) */
+.header__nav--desktop { display: none; }
+.header__cta { display: none; }
 
-.header__nav {
+.header__burger {
   display: flex;
-  gap: var(--space-5);
-  font-size: 0.9rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 26px;
+  height: 20px;
 }
-.header__nav a:hover { color: var(--color-sand); }
+.header__burger span {
+  height: 2px;
+  width: 100%;
+  background: var(--color-ink);
+  border-radius: 2px;
+  transition: transform var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease);
+}
+.header__burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.header__burger.is-open span:nth-child(2) { opacity: 0; }
+.header__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-.header__cta { font-size: 0.85rem; padding: 0.65rem 1.3rem; }
+.header__nav-mobile {
+  max-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: max-height var(--dur-base) var(--ease);
+  border-top: 1px solid transparent;
+}
+.header__nav-mobile.is-open {
+  max-height: 300px;
+  border-top: 1px solid var(--color-border);
+}
+.header__nav-mobile a {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px dashed var(--color-border);
+}
 
-@media (max-width: 800px) {
-  .header__nav { display: none; }
+/* A partir do tablet: nav horizontal, CTA visível, sem hambúrguer */
+@media (min-width: 768px) {
+  .header__nav--desktop {
+    display: flex;
+    gap: var(--space-5);
+    font-size: 0.9rem;
+  }
+  .header__nav--desktop a:hover { color: var(--color-sand); }
+  .header__cta { display: inline-flex; font-size: 0.85rem; padding: 0.6rem 1.2rem; }
+  .header__burger, .header__nav-mobile { display: none; }
 }
