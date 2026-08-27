@@ -27,7 +27,7 @@
 .logo__signature-wrap {
   display: inline-block;
   margin-top: 0.30em;
-  margin-left: 2em;
+  margin-left: 1em;
   transform: rotate(-5deg);
 }
 
@@ -60,8 +60,8 @@
 .logo--compact .logo__signature-wrap { margin-left: 1rem;}
 
 /* Hero/Footer: versão grande */
-.logo--full .logo__brand { font-size: clamp(6.2rem, 6vw, 3.4rem); }
-.logo--full .logo__signature { font-size: clamp(2rem, 3vw, 3.6rem); }
+.logo--full .logo__brand { font-size: clamp(4.2rem, 8.5vw, 5.4rem); }
+.logo--full .logo__signature { font-size: clamp(1.6rem, 3vw, 3.6rem); }
 
 @media (min-width: 768px) {
   .logo--full .logo__signature-wrap { margin-left: 1rem; }
