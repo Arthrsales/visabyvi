@@ -16,7 +16,7 @@ const content = {
     p1: '[TEXT TO BE DEFINED — how Vitória started VisaByVi]',
     p2: '[TEXT TO BE DEFINED — how the team grew and how support works today]',
     statNumber: '+500',
-    statLabel: 'people have already been supported by VisaByVi',
+    statLabel: 'people have already been supported by VisaByVi.',
   },
 };
 
