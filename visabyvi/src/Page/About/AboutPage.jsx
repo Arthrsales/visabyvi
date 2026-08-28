@@ -1,3 +1,4 @@
+import './About.css'
 import useInView from '../../hooks/useInView';
 import { useLanguage } from '../../i18n/LanguageContext';
 

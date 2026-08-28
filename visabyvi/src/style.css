@@ -9,9 +9,10 @@
 @import './components/Services/Services.css';
 @import './components/Process/Process.css';
 @import './components/Timelines/Timelines.css';
-@import './Page/About/About.css';
 @import './components/WhyUs/WhyUs.css';
 @import './components/Testimonials/Testimonials.css';
 @import './components/FAQ/FAQ.css';
 @import './components/CTA/CTA.css';
 @import './components/Footer/Footer.css';
+
+@import './Page/About/About.css';
