@@ -9,7 +9,7 @@ import Testimonials from './components/Testimonials/Testimonials';
 import FAQ from './components/FAQ/FAQ';
 import CTA from './components/CTA/CTA';
 import Footer from './components/Footer/Footer';
-import AboutPage from './pages/About/AboutPage';
+import AboutPage from './Pages/About/AboutPage';
 
 const Home = () => (
   <main>
