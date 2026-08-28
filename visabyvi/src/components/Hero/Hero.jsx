@@ -1,43 +1,84 @@
 import Logo from '../Logo/Logo';
 import useParallax from '../../hooks/useParallax';
+import { useLanguage } from '../../i18n/LanguageContext';
+
+const content = {
+  pt: {
+    eyebrow: 'Assessoria documental · Processos não imigratórios nos EUA',
+    title: 'Organização e preparação documental para o seu processo nos Estados Unidos.',
+    subtitle:
+      'Acompanhamento completo na preparação de status, formulários, cartas e evidências — do diagnóstico inicial à entrega final organizada. A VisaByVi não é um escritório de advocacia; nosso foco é suporte administrativo e documental.',
+    primaryButton: 'Agendar consulta gratuita',
+    secondaryButton: 'Ver como funciona',
+    visas: 'B-2 · J-1→B-2 · F-1 · RFE · TROCA DE ESCOLA',
+  },
+
+  en: {
+    eyebrow: 'Document assistance · Non-immigrant processes in the US',
+    title: 'Document organization and preparation for your process in the United States.',
+    subtitle:
+      'Complete support with status preparation, forms, letters, and evidence — from the initial assessment to the final organized delivery. VisaByVi is not a law firm; our focus is administrative and document support.',
+    primaryButton: 'Schedule a free consultation',
+    secondaryButton: 'See how it works',
+    visas: 'B-2 · J-1→B-2 · F-1 · RFE · SCHOOL TRANSFER',
+  },
+};
 
 const Hero = () => {
-  const parallaxRef = useParallax(0.15); // ajuste a intensidade aqui
+  const { lang } = useLanguage();
+  const t = content[lang];
+
+  const parallaxRef = useParallax(0.15);
 
   return (
     <section className="hero" id="inicio">
-      {/* 
-        FUNDO PARALLAX — cobre o hero inteiro.
-        Troque .hero__parallax-placeholder por:
-        <img src="/caminho-da-imagem.jpg" alt="" className="hero__parallax-img" />
-        O ref (parallaxRef) já cuida do movimento no scroll.
-      */}
       <div className="hero__parallax" ref={parallaxRef}>
-       <img src="/hero-bandeira.webp" alt="" className="hero__parallax-img" />
+        <img
+          src="/hero-bandeira.webp"
+          alt=""
+          className="hero__parallax-img"
+        />
       </div>
+
       <div className="hero__overlay" aria-hidden="true" />
 
       <div className="container hero__row">
-        {/* Mobile-first: logo aparece primeiro, depois o texto */}
         <div className="hero__logo-badge">
           <Logo variant="full" />
         </div>
 
         <div className="hero__content">
-          <span className="eyebrow">Consultoria de visto e imigração · EUA</span>
+          <span className="eyebrow">
+            {t.eyebrow}
+          </span>
+
           <h1 className="hero__title">
-            O caminho legal para os Estados Unidos, sem atalhos e sem adivinhação.
+            {t.title}
           </h1>
+
           <p className="hero__subtitle">
-            Assessoria jurídica licenciada e mentoria de carreira para quem quer estudar,
-            trabalhar ou viver nos EUA com o processo certo — do primeiro formulário
-            à entrevista no consulado.
+            {t.subtitle}
           </p>
+
           <div className="hero__actions">
-            <a href="#contato" className="btn btn--primary">Agendar consulta gratuita</a>
-            <a href="#processo" className="btn btn--ghost">Ver como funciona</a>
+            <a
+              href="#contato"
+              className="btn btn--primary"
+            >
+              {t.primaryButton}
+            </a>
+
+            <a
+              href="#processo"
+              className="btn btn--ghost"
+            >
+              {t.secondaryButton}
+            </a>
           </div>
-          <p className="hero__visas mono">F-1 · J-1 · H-1B · B-1/B-2 · GREEN CARD</p>
+
+          <p className="hero__visas mono">
+            {t.visas}
+          </p>
         </div>
       </div>
     </section>

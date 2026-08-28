@@ -7,6 +7,17 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.header__lang {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.7rem;
+  color: var(--color-sand);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+.header__lang:hover { border-color: var(--color-sand); }
+
 .header__row {
   display: flex;
   align-items: center;

@@ -1,69 +1,41 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../../i18n/LanguageContext';
 
-const ITEMS = [
-  {
-    title: 'Assessoria licenciada',
-    desc: 'Consultoria jurídica conduzida por profissionais habilitados nos EUA.',
+const content = {
+  pt: {
+    eyebrow: 'Por que a VisaByVi',
+    title: 'Menos incerteza, mais planejamento.',
+    items: [
+      { title: 'Acompanhamento completo', desc: 'Vamos além do formulário — organizamos toda a preparação com você.' },
+      { title: 'Foco em processos internos', desc: 'Especialistas em mudança e extensão de status dentro dos EUA.' },
+      { title: 'Transparência total', desc: 'Você acompanha cada etapa e cada decisão do seu processo.' },
+      { title: 'Atendimento em português', desc: 'Do primeiro contato à entrega final, sem barreira de idioma.' },
+    ],
   },
-  {
-    title: 'Mentoria além do visto',
-    desc: 'Apoio acadêmico e de carreira para toda a sua jornada.',
+  en: {
+    eyebrow: 'Why VisaByVi',
+    title: 'Less uncertainty, more planning.',
+    items: [
+      { title: 'End-to-end support', desc: 'We go beyond the form — we organize the whole preparation with you.' },
+      { title: 'Focus on in-country processes', desc: 'Specialists in change and extension of status inside the US.' },
+      { title: 'Full transparency', desc: 'You follow every step and every decision of your process.' },
+      { title: 'Support in Portuguese', desc: 'From first contact to final delivery, with no language barrier.' },
+    ],
   },
-  {
-    title: 'Transparência total',
-    desc: 'Você acompanha cada etapa e cada decisão do seu processo.',
-  },
-  {
-    title: 'Atendimento em português',
-    desc: 'Do primeiro contato à entrevista, sem barreira de idioma.',
-  },
-];
+};
 
 const WhyUs = () => {
-  const sectionRef = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
+  const { lang } = useLanguage();
+  const t = content[lang];
   return (
-    <section
-      ref={sectionRef}
-      className={`whyus section ${visible ? 'whyus--visible' : ''}`}
-    >
+    <section className="whyus section whyus--visible">
       <div className="container whyus__row">
-
         <div className="section__head whyus__head">
-          <span className="eyebrow">Por que a Visa by Vi</span>
-          <h2>Menos incerteza, mais planejamento.</h2>
+          <span className="eyebrow">{t.eyebrow}</span>
+          <h2>{t.title}</h2>
         </div>
-
-        {/* <div className='vitoria'></div> */}
-
         <div className="whyus__list">
-          {ITEMS.map((item, index) => (
-            <div
-              className="whyus__item"
-              key={item.title}
-              style={{ '--delay': `${index * 0.15}s` }}
-            >
+          {t.items.map((item,i) => (
+            <div className="whyus__item" key={item.title} style={{ '--delay': `${i * 0.15}s` }}>
               <h3>{item.title}</h3>
               <p>{item.desc}</p>
             </div>

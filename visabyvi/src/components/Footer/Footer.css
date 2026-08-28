@@ -34,6 +34,27 @@
 .footer__legal a { color: var(--color-sand-deep); text-decoration: underline; }
 .footer__copy { font-size: 0.72rem; color: var(--color-muted); }
 
+.footer__terms {
+  border-top: 1px dashed var(--color-border);
+  padding: var(--space-4) 0;
+  font-size: 0.8rem;
+}
+
+.footer__terms summary {
+  cursor: pointer;
+  color: var(--color-sand-deep);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+.footer__terms summary:hover { color: var(--color-sand); }
+
+.footer__terms p {
+  margin-top: var(--space-3);
+  max-width: 640px;
+  font-size: 0.8rem;
+}
+
+
 /* Tablet+: grid em colunas, rodapé em linha */
 @media (min-width: 768px) {
   .footer__grid {

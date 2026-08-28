@@ -1,0 +1,30 @@
+.timelines__disclaimer {
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+.timelines__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.timeline-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+}
+
+.timeline-card__lead {
+  display: inline-block;
+  font-size: 1.4rem;
+  color: var(--color-sand);
+  margin-bottom: var(--space-3);
+}
+
+.timeline-card h3 { color: var(--color-ink); margin-bottom: var(--space-2); font-size: 1.05rem; }
+
+@media (min-width: 768px) {
+  .timelines__grid { grid-template-columns: repeat(3, 1fr); }
+}

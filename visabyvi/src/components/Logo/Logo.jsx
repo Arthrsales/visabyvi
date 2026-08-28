@@ -10,7 +10,6 @@ const Logo = ({ variant = 'full', className = '' }) => {
     <div className={`logo logo--${variant} ${className}`}>
       <span className="logo__brand">VisabyVi</span>
       <span className="logo__signature-wrap">
-        <span className="logo__signature">Vitória Macedo</span>
       </span>
     </div>
   );
